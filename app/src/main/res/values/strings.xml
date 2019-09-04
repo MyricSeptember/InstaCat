@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Instacat</string>
+    <string name="app_name">InstaCat</string>
+    <string name="cat_image">Cat image</string>
 </resources>
