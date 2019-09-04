@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.example.android.devbyteviewer.domain.Cat
 import com.example.instacat.databinding.FragmentOverviewBinding
 
@@ -53,7 +54,8 @@ class OverViewFragment : Fragment() {
 
         viewModel.navigateToSelectedCat.observe(this, Observer {
             if (null != it) {
-
+                this.findNavController()
+                    .navigate(OverViewFragmentDirections.actionOverViewFragmentToDetailFragment(it))
                 viewModel.displayCatDetailsComplete()
             }
         })
