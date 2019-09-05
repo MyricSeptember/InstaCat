@@ -5,6 +5,7 @@ import androidx.lifecycle.*
 import com.example.android.devbyteviewer.database.getDatabase
 import com.example.android.devbyteviewer.domain.Cat
 import com.example.cattestproject.repository.CatsRepository
+import com.example.instacat.util.NetworkUtils
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -12,12 +13,20 @@ import kotlinx.coroutines.launch
 
 enum class CatsApiStatus { LOADING, ERROR, DONE }
 
-class OverViewViewmodel(application: Application) : AndroidViewModel(application) {
+class OverViewViewmodel(
+    application: Application, networkUtils: NetworkUtils
+) : AndroidViewModel(application) {
+
 
     private val _navigateToSelectedCat = MutableLiveData<Cat>()
 
     val navigateToSelectedCat: LiveData<Cat>
         get() = _navigateToSelectedCat
+
+    private val _hasNetword = MutableLiveData<Boolean>()
+
+    val hasNetwork: LiveData<Boolean>
+        get() = _hasNetword
 
     private val _status = MutableLiveData<CatsApiStatus>()
 
@@ -32,8 +41,14 @@ class OverViewViewmodel(application: Application) : AndroidViewModel(application
     private val catsRepository = CatsRepository(database)
 
     init {
-        viewModelScope.launch {
-            catsRepository.fetchCatsData()
+        if (!networkUtils.hasNetworkConnection()) {
+            _hasNetword.value = false
+
+        } else {
+            viewModelScope.launch {
+                catsRepository.fetchCatsData()
+            }
+            _hasNetword.value = true
         }
     }
 
@@ -56,11 +71,12 @@ class OverViewViewmodel(application: Application) : AndroidViewModel(application
         _status.value = status
     }
 
-    class Factory(val app: Application) : ViewModelProvider.Factory {
+    class Factory(val app: Application, val networkUtils: NetworkUtils) :
+        ViewModelProvider.Factory {
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
             if (modelClass.isAssignableFrom(OverViewViewmodel::class.java)) {
                 @Suppress("UNCHECKED_CAST")
-                return OverViewViewmodel(app) as T
+                return OverViewViewmodel(app, networkUtils) as T
             }
             throw IllegalArgumentException("Unable to construct viewmodel")
         }
