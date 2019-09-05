@@ -24,8 +24,8 @@ Instacat is a simple android application made for all the cat lover's in the wor
 
 ### To-Do List
 
-- [X] Write unit tests
-- [X] Add Dagger for dependency injection
+- [ ] Write unit tests
+- [ ] Add Dagger for dependency injection
 - [ ] Create a beautiful UI
 
 
