@@ -2,4 +2,6 @@
     <string name="app_name">InstaCat</string>
     <string name="cat_image">Cat image</string>
     <string name="cat_sound">Meow</string>
+    <string name="no_network_connection" translation_description="Snackbar message when there is not network connection">No internet connection.</string>
+
 </resources>
