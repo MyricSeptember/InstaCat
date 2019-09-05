@@ -26,16 +26,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.selectedcat.title}"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="36sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/app_name"
-                android:textAlignment="center" />
+                tools:text="@string/app_name" />
 
             <ImageView
                 android:id="@+id/main_photo_image"
                 android:layout_width="0dp"
                 android:layout_height="266dp"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/margin"
                 android:scaleType="centerCrop"
                 app:imageUrl="@{viewModel.selectedcat.url}"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -48,18 +53,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@{viewModel.selectedcat.description}"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
-                tools:text="@string/app_name"
-                android:textAlignment="center" />
+                tools:text="@string/app_name" />
 
             <Button
                 android:id="@+id/sound_button"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:layout_marginBottom="@dimen/tag_vert_padding"
+                android:background="@drawable/btn_rounded"
                 android:text="@string/cat_sound"
-                android:background="@color/colorAccent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/description" />

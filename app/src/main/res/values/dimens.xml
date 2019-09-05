@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tag_dot_size">12dp</dimen>
+    <dimen name="margin">24dp</dimen>
+    <dimen name="tag_vert_padding">6dp</dimen>
+    <dimen name="tag_corner_radius">100dp</dimen>
+</resources>
