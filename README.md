@@ -19,6 +19,16 @@ Instacat is a simple android application made for all the cat lover's in the wor
 - Kotlin coroutines
 - Android Support Library
 
+# Technical Description:
+- The application architecture is in Model-View-ViewModel.
+- Navigation architecture component is used to manage navigation in this app.
+- Room database is used to persist the information.
+- Kotlin coroutes are used for handling long-running tasks.
+- Retrofit is a REST Client
+- To create responsive layouts for different screen sizes we use constrainLayout.
+- Exoplayer to play to local audio file.
+- Glide for loading the images.
+
 # Language
 - Kotlin
 
