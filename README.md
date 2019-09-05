@@ -1,6 +1,6 @@
 # Instacat
 
-Instacat is a simple android application made for all the cat lover's in the world. The app displays a list of cat images and displays a detail screen when the user selects a cat. The user can also listen to a "Meow" sound when they press the button on the detail screen.
+Instacat is a simple android application made for all the cat lovers in the world. The app displays a list of cat images and displays a detail screen when the user selects a cat. The user can also listen to a "Meow" sound when they press the button on the detail screen.
 
 # Development status
 - In progress
