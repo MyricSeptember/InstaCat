@@ -29,6 +29,10 @@ Instacat is a simple android application made for all the cat lover's in the wor
 - Exoplayer to play to local audio file.
 - Glide for loading the images.
 
+# API
+Data used in the app is read from the TheCatAPI. 
+URL: https://thecatapi.com/
+
 # Language
 - Kotlin
 
