@@ -6,9 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import com.example.cattestproject.util.lifecycleAwareHandler
 import com.example.instacat.databinding.FragmentDetailBinding
+import com.example.instacat.util.ExoUtil
 
 class DetailFragment : Fragment() {
+
+    private lateinit var exoUtil: ExoUtil
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,6 +26,12 @@ class DetailFragment : Fragment() {
         binding.viewModel = ViewModelProviders.of(
             this, viewModelFactory
         ).get(DetailViewModel::class.java)
+
+        exoUtil = ExoUtil(activity!!)
+
+        binding.soundButton.setOnClickListener {
+            lifecycleAwareHandler(this, exoUtil)
+        }
 
         return binding.root
     }
