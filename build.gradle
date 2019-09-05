@@ -22,6 +22,7 @@ buildscript {
         version_timber = "4.7.1"
         version_recyclerview = "1.0.0"
         version_exoplayer = "2.7.3"
+        version_dagger = "2.24"
     }
     repositories {
         google()

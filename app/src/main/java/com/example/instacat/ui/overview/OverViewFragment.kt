@@ -4,31 +4,32 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.example.android.devbyteviewer.domain.Cat
 import com.example.instacat.databinding.FragmentOverviewBinding
+import dagger.android.support.DaggerFragment
+import javax.inject.Inject
 
-class OverViewFragment : Fragment() {
+class OverViewFragment : DaggerFragment() {
+
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+    private lateinit var viewModel: OverViewViewmodel
 
     lateinit var binding: FragmentOverviewBinding
-
-    private val viewModel: OverViewViewmodel by lazy {
-        val activity = requireNotNull(this.activity) {
-            "You can only access the viewModel after onActivityCreated()"
-        }
-        ViewModelProviders.of(this, OverViewViewmodel.Factory(activity.application))
-            .get(OverViewViewmodel::class.java)
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentOverviewBinding.inflate(inflater)
+        viewModel =
+            ViewModelProviders.of(this.activity!!, viewModelFactory)
+                .get(OverViewViewmodel::class.java)
+
         return binding.root
     }
 

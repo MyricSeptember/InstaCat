@@ -1,6 +1,5 @@
 package com.example.android.devbyteviewer.database
 
-import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.room.*
 
@@ -15,20 +14,5 @@ interface CatDao {
 
 @Database(entities = [DatabaseCat::class], version = 1)
 abstract class CatDatabase : RoomDatabase() {
-    abstract val catDao: CatDao
-}
-
-private lateinit var INSTANCE: CatDatabase
-
-fun getDatabase(context: Context): CatDatabase {
-    synchronized(CatDatabase::class.java) {
-        if (!::INSTANCE.isInitialized) {
-            INSTANCE = Room.databaseBuilder(
-                context.applicationContext,
-                CatDatabase::class.java,
-                "cat"
-            ).build()
-        }
-    }
-    return INSTANCE
+    abstract fun catDao(): CatDao
 }

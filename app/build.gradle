@@ -18,6 +18,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -83,4 +86,14 @@ dependencies {
     implementation "com.google.android.exoplayer:exoplayer-core:$version_exoplayer"
     implementation "com.google.android.exoplayer:exoplayer-dash:$version_exoplayer"
     implementation "com.google.android.exoplayer:exoplayer-ui:$version_exoplayer"
+
+// Dagger
+    implementation "com.google.dagger:dagger:$version_dagger"
+    implementation "com.google.dagger:dagger-android:$version_dagger"
+    implementation "com.google.dagger:dagger-android-support:$version_dagger"
+    kapt "com.google.dagger:dagger-compiler:$version_dagger"
+    kapt "com.google.dagger:dagger-android-processor:$version_dagger"
+
+    //Timber
+    implementation "com.jakewharton.timber:timber:$version_timber"
 }
