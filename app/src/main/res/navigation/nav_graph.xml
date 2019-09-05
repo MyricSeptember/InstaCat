@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
+    android:label="InstaCat"
     app:startDestination="@id/overViewFragment">
 
     <fragment
         android:id="@+id/overViewFragment"
         android:name="com.example.cattestproject.overview.OverViewFragment"
-        android:label="OverViewFragment"
+        android:label="InstaCat"
         tools:layout="@layout/fragment_overview">
         <action
             android:id="@+id/action_overViewFragment_to_detailFragment"
@@ -17,8 +18,8 @@
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.cattestproject.ui.detail.DetailFragment"
-        android:label="DetailFragment"
-        tools:layout="@layout/fragment_detail" >
+        android:label="InstaCat"
+        tools:layout="@layout/fragment_detail">
         <argument
             android:name="selectedCat"
             app:argType="com.example.android.devbyteviewer.domain.Cat" />

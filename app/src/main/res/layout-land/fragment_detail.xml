@@ -27,7 +27,6 @@
                 android:layout_height="36dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="4dp"
-
                 android:text="@{viewModel.selectedcat.title}"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +40,6 @@
                 android:layout_height="307dp"
                 android:scaleType="centerCrop"
                 app:imageUrl="@{viewModel.selectedcat.url}"
-
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:src="@tools:sample/backgrounds/scenic" />
@@ -52,7 +50,6 @@
                 android:layout_height="52dp"
                 android:layout_marginTop="32dp"
                 android:text="@{viewModel.selectedcat.description}"
-
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.729"
