@@ -14,6 +14,7 @@ data class NetworkCat(
     val imgSrcUrl: String
 )
 
+//TODO refactor description to strings file
 fun List<NetworkCat>.asDomainModel(): List<Cat> {
     return this.map {
         Cat(

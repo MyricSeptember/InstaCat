@@ -11,16 +11,22 @@ import com.example.instacat.databinding.FragmentDetailBinding
 import com.example.instacat.util.ExoUtil
 
 class DetailFragment : Fragment() {
-
+    lateinit var binding: FragmentDetailBinding
     private lateinit var exoUtil: ExoUtil
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentDetailBinding.inflate(inflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         val application = requireNotNull(activity).application
-        val binding = FragmentDetailBinding.inflate(inflater)
         binding.lifecycleOwner = this
+
         val marsProperty = DetailFragmentArgs.fromBundle(arguments!!).selectedCat
         val viewModelFactory = DetailViewModelFactory(marsProperty, application)
         binding.viewModel = ViewModelProviders.of(
@@ -32,7 +38,5 @@ class DetailFragment : Fragment() {
         binding.soundButton.setOnClickListener {
             lifecycleAwareHandler(this, exoUtil)
         }
-
-        return binding.root
     }
 }
