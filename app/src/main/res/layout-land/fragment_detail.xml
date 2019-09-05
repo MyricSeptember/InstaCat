@@ -23,46 +23,55 @@
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="283dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="4dp"
+
                 android:text="@{viewModel.selectedcat.title}"
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/main_photo_image"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:text="@string/app_name"
-                android:textAlignment="center" />
+                tools:text="@string/app_name" />
 
             <ImageView
                 android:id="@+id/main_photo_image"
-                android:layout_width="0dp"
-                android:layout_height="266dp"
+                android:layout_width="309dp"
+                android:layout_height="307dp"
                 android:scaleType="centerCrop"
                 app:imageUrl="@{viewModel.selectedcat.url}"
-                app:layout_constraintEnd_toEndOf="parent"
+
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:src="@tools:sample/backgrounds/scenic" />
 
             <TextView
                 android:id="@+id/description"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="269dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="32dp"
                 android:text="@{viewModel.selectedcat.description}"
+
+                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/main_photo_image"
-                tools:text="@string/app_name"
-                android:textAlignment="center" />
+                app:layout_constraintHorizontal_bias="0.729"
+                app:layout_constraintStart_toEndOf="@+id/main_photo_image"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                tools:text="sdfsdfsdfdsg  llkjfgklsdjgk;sldjglk;sjgksljfgks;ljglkssgksljglk;sjg;lksjg;lksjdfglk;sdjfgksdfjgksfdjglkdfjg" />
 
             <Button
                 android:id="@+id/sound_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/cat_sound"
                 android:background="@color/colorAccent"
+                android:text="@string/cat_sound"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description" />
+                app:layout_constraintHorizontal_bias="0.635"
+                app:layout_constraintStart_toEndOf="@+id/main_photo_image"
+                app:layout_constraintTop_toBottomOf="@+id/description"
+                app:layout_constraintVertical_bias="0.45" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

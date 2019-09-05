@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">InstaCat</string>
     <string name="cat_image">Cat image</string>
+    <string name="cat_sound">Meow</string>
 </resources>
