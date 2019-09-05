@@ -18,8 +18,8 @@ fun List<NetworkCat>.asDomainModel(): List<Cat> {
     return this.map {
         Cat(
             id = it.id,
-            title = "image $it.id",
-            description = "This is the description for image $it.id, It's a really cool image, bask in it's gloriousness",
+            title = "image ${it.id}",
+            description = "This is the description for image ${it.id}, It's a really cool image, bask in it's gloriousness",
             url = it.imgUrl
         )
     }
